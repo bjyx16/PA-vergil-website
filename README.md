@@ -6,6 +6,7 @@ python -m venv venv
 source venv/bin/activate
 
 Run server:
+
 python manage.py runserver (run server locally)
 http://127.0.0.1:8000/ 
 
