@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<h1>{{ book.title }}</h1>
+<div class="row">
+    <div class="col-md-8">
+        {% if book.image_str %}
+            <img src="{{ book.image_str }}" width="100%">
+        {% endif %}
+        <p> {{ text }} </p>
+    </div>
+    <div class="col-md-4">
+        <p class="card-title">Title/Description: {{ book.title_description }}</p>
+        <br>
+        <p class="card-text">Contributors: {{ book.contributors }}</p>
+        <p class="card-text">Date: {{ book.date }}</p>
+        <p class="card-text">Place of Origin: {{ book.place_origin }}</p>
+        <p class="card-text">Publisher: {{ book.publisher }}</p>
+        <p class="card-text">Category: {{ book.category }}</p>
+        <p class="card-text">Language: {{ book.language }}</p>
+        <p class="card-text">Content Tags: {{ book.genre }}</p>
+        <p class="card-text">Notes: {{ book.notes }}</p>
+        <p class="card-text">Call Number: {{ book.call_num }}</p>
+        <p class="card-text">Barcode: {{ book.barcode }}</p>
+        <p class="card-text">Location Code: {{ book.loc_code }}</p>
+        <p class="card-text">British Museum Catalogue (1882): {{ book.BM_cat }}</p>
+    </div>
+</div>
+{% endblock page_content %}
+
+<!-- title_description = models.TextField()
+    contributors = models.TextField(null=True, blank=True)
+    date = models.CharField(max_length=50, null=True, blank=True)
+    place_origin = models.TextField(null=True, blank=True)
+    publisher = models.TextField(null=True, blank=True)
+    category = models.TextField(null=True, blank=True)
+    language = models.CharField(max_length=100)
+    genre = models.TextField(null=True, blank=True) #bucolica, georgica, aeneid, etc.
+    call_num = models.TextField(null=True, blank=True)
+    notes = models.TextField()
+    image_loc = models.FileField(upload_to="bookcat_images/", null=True, blank=True)
+    image_str = models.TextField(null=True, blank=True)
+    barcode = models.CharField(max_length=50, null=True, blank=True)
+    loc_code = models.CharField(max_length=50, null=True, blank=True)
+    BM_cat = models.CharField(max_length=50, null=True, blank=True) -->
