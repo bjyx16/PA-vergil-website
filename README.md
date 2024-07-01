@@ -1,7 +1,7 @@
 # PA-vergil-website
 
 ## Basic Commands
-Setting up venv:  
+Setting up venv:
 python -m venv venv       
 source venv/bin/activate
 
