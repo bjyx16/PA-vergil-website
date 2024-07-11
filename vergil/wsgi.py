@@ -11,6 +11,8 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "vergil.settings")
+is_prod = 'WEBSITE_HOSTNAME' in os.environ
+settings_module = 'vergil.production' if is_prod else 'vergil.settings'
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings_module)
 
 application = get_wsgi_application()
