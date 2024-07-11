@@ -3,7 +3,7 @@
 ## Basic Commands
 No venv;
 Setting up venv:
-python -m venv venv       
+python3 -m venv venv       
 source venv/bin/activate
 
 Run server:  
