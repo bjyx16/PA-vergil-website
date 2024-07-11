@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
-import requests
-import re
+# import requests
+# import re
 
 from bookcat.models import Book
 
