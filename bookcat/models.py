@@ -10,7 +10,7 @@ class Book(models.Model):
     language = models.CharField(max_length=100)
     genre = models.TextField(null=True, blank=True) #bucolica, georgica, aeneid, etc.
     call_num = models.TextField(null=True, blank=True)
-    notes = models.TextField()
+    notes = models.TextField(null=True, blank=True)
     image_loc = models.FileField(upload_to="bookcat_images/", null=True, blank=True)
     image_str = models.TextField(null=True, blank=True)
     barcode = models.CharField(max_length=50, null=True, blank=True)

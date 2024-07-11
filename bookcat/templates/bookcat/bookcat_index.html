@@ -1,8 +1,6 @@
 
 {% extends "base.html" %}
 
-<!-- {% load render_table from django_tables2 %} -->
-
 {% block page_content %}
 
 <div class="image_wrapper">
@@ -14,12 +12,11 @@
 </div>
 
 <br>
-<h1 style="font-family: Cambria, Georgia, Times, 'Times New Roman', serif">Catalogue of the Charles H. Forbes Collection of Vergiliana</h1>
+<h3>Catalogue of the Charles H. Forbes Collection of Vergiliana</h3>
 <br>
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">Entry</th>
             <th scope="col" style="width: 20rem;">Cover</th>
             <th scope="col" style="width: 50rem;">Information</th>
         </tr>
@@ -27,7 +24,6 @@
     <tbody>
         {% for book in books %}
             <tr>
-                <th scope="row">{{ book.pk }}</th>
                 <td>
                     {% if book.image_str %}
                         <img src="{{ book.image_str }}" class="rounded" style="width: 20rem;">
