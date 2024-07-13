@@ -10,7 +10,7 @@ def main():
     is_prod = 'WEBSITE_HOSTNAME' in os.environ
     print("is_prod:", is_prod)
     settings_module = "vergil.production" if is_prod else 'vergil.settings'
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "vergil.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings_module)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
