@@ -3,32 +3,45 @@
 
 {% block page_content %}
 
-<div>
+<!-- <div>
     <img src="https://api.finarte.it/api/lotto/immagine/106928/2/800" 
         alt="Banner"
-        style="display: block; width: 100%; height: 500px; object-fit: cover; object-position: 100% 33%;"
+        
     />
-</div>
+</div> -->
 
-<div class="img__wrap">
-  <img class="img__img" src="http://placehold.it/257x200.jpg" />
-  <p class="img__description">This image looks super neat.</p>
+<div>
+    <div class="img__wrap">
+        <img class="img__img" src="https://api.finarte.it/api/lotto/immagine/106928/2/800"
+        style="display: block; width: 100%; height: 500px; object-fit: cover; object-position: 100% 33%;"
+        />
+        <p class="img__description">Codex Mediceus. Publius Vergilius Maronis Codex Antiquissimus. 1741.</p>
+    </div>
 </div>
 
 <br>
 <p class="h1">Catalog of the Charles H. Forbes Collection of Vergiliana</p>
 <br>
 
-<div class="row">
-    <div class="col">
-        <div class="card card-body">
-            <form method="get">
-                {{ myFilter.form }}
-            <button class="btn btn-primary" type="submit">Search</button>
-            </form>
+<p class="d-inline-flex gap-1">
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Search
+    </button>
+</p>
+  <div class="collapse" id="collapseExample">
+    <div class="row">
+        <div class="col">
+            <div class="card card-body">
+                <form method="get">
+                    {{ myFilter.form.as_p }}
+                <div style="text-align:left">
+                    <button class="btn btn-outline-primary" type="submit">Enter</button>
+                </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+  </div>
 
 <table class="table">
     <thead>
