@@ -3,17 +3,33 @@
 
 {% block page_content %}
 
-<div class="image_wrapper">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Parco_della_Grotta_di_Posillipo5_%28crop%29.jpg/440px-Parco_della_Grotta_di_Posillipo5_%28crop%29.jpg" 
-        alt=""
-        style="width: 100%; height: 450px; object-fit: cover; object-position: 100% 50%;"
+<div>
+    <img src="https://api.finarte.it/api/lotto/immagine/106928/2/800" 
+        alt="Banner"
+        style="display: block; width: 100%; height: 500px; object-fit: cover; object-position: 100% 33%;"
     />
-    <!-- HOVER AND REVEAL TEXT -->
+</div>
+
+<div class="img__wrap">
+  <img class="img__img" src="http://placehold.it/257x200.jpg" />
+  <p class="img__description">This image looks super neat.</p>
 </div>
 
 <br>
-<h3>Catalogue of the Charles H. Forbes Collection of Vergiliana</h3>
+<p class="h1">Catalog of the Charles H. Forbes Collection of Vergiliana</p>
 <br>
+
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <form method="get">
+                {{ myFilter.form }}
+            <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 <table class="table">
     <thead>
         <tr>
@@ -43,30 +59,4 @@
     </tbody>
 </table>
 
-<!-- <div class="row">   
-{% for book in books %}
-    <div class="col-md-4">
-        <div class="card mb-3" style="height: 300px;">
-            {% if book.image_loc %}
-                <img class="card-img-top" src="{{ book.image_loc.url }}">
-            {% endif %}
-            {% if book.image_str %}
-                <img class="card-img-top" src="{{ book.image_str }}">
-            {% endif %}
-            <div class="card-body">
-                <h5 class="card-title">{{ book.title_description|truncatechars:75 }}</h5>
-                <p class="card-text">{{ book.contributors }}</p>
-                <p class="card-text">{{ book.date }}</p>
-                <p class="card-text">{{ book.place_origin }}</p>
-                <p class="card-text">{{ book.publisher }}</p>
-                <p class="card-text"><small class="text-muted">{{ book.category }}</small></p>
-                <a href="{% url 'bookcat_detail' book.pk %}"
-                   class="btn btn-primary">
-                    Read More
-                </a>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-</div> -->
 {% endblock %}

@@ -1,29 +1,46 @@
 {% extends "base.html" %}
 
 {% block page_content %}
-<h1>{{ book.title }}</h1>
-<div class="row">
-    <div class="col-md-8">
+<p class="h4">Title and Description: </b>
+<p><b>{{ book.title_description }}</b></p>
+<hr>
+    <!-- <div class="col-md-8">
         {% if book.image_str %}
             <img src="{{ book.image_str }}" width="100%">
         {% endif %}
-    </div>
-    <div class="col-md-4">
-        <p class="card-title">Title/Description: {{ book.title_description }}</p>
-        <br>
-        <p class="card-text">Contributors: {{ book.contributors }}</p>
-        <p class="card-text">Date: {{ book.date }}</p>
-        <p class="card-text">Place of Origin: {{ book.place_origin }}</p>
-        <p class="card-text">Publisher: {{ book.publisher }}</p>
-        <p class="card-text">Category: {{ book.category }}</p>
-        <p class="card-text">Language: {{ book.language }}</p>
-        <p class="card-text">Content Tags: {{ book.genre }}</p>
-        <p class="card-text">Notes: {{ book.notes }}</p>
-        <p class="card-text">Call Number: {{ book.call_num }}</p>
-        <p class="card-text">Barcode: {{ book.barcode }}</p>
-        <p class="card-text">Location Code: {{ book.loc_code }}</p>
-        <p class="card-text">British Museum Catalogue (1882): {{ book.BM_cat }}</p>
-    </div>
+    </div> -->
+
+<div>
+    <b>Contributors: </b>
+    <p>{{ book.contributors }}</p>
+
+    <b>Date: </b>
+    <p>{{ book.date }}</p>
+
+    <b>Publisher: </b>
+    <p>{{ book.publisher }}</p>
+
+    <b>Category: </b>
+    <p>{{ book.category }}</p>
+
+    <b>Language: </b>
+    <p>{{ book.language }}</p>
+
+    <b>Notes: </b>
+    <p>{{ book.notes }}</p>
+
+    <b>Call Number: </b>
+    <p>{{ book.call_num }}</p>
+
+    <b>Barcode: </b>
+    <p>{{ book.barcode }}</p>
+
+    <b>Location Code: </b>
+    <p>{{ book.loc_code }}</p>
+
+    <b>British Museum Catalogue (1882): </b>
+    <p>{{ book.BM_cat }}</p>
+
 </div>
 {% endblock page_content %}
 
@@ -41,4 +58,45 @@
     image_str = models.TextField(null=True, blank=True)
     barcode = models.CharField(max_length=50, null=True, blank=True)
     loc_code = models.CharField(max_length=50, null=True, blank=True)
-    BM_cat = models.CharField(max_length=50, null=True, blank=True) -->
+    BM_cat = models.CharField(max_length=50, null=True, blank=True) 
+
+{% if book.contributors %}
+        <b>Contributors: </b>
+        <p>{{ book.contributors }}</p>
+    {% endif %}
+    {% if book.date %}
+        <b>Date: </b>
+        <p>{{ book.date }}</p>
+    {% endif %}
+    {% if book.publisher %}
+        <b>Publisher: </b>
+        <p>{{ book.publisher }}</p>
+    {% endif %}
+    {% if book.category %}
+        <b>Category: </b>
+        <p>{{ book.category }}</p>
+    {% endif %}
+    {% if book.language %}
+        <b>Language: </b>
+        <p>{{ book.language }}</p>
+    {% endif %}
+    {% if book.notes %}
+        <b>Notes: </b>
+        <p>{{ book.notes }}</p>
+    {% endif %}
+    {% if book.call_num %}
+        <b>Call Number: </b>
+        <p>{{ book.call_num }}</p>
+    {% endif %}
+    {% if book.barcode %}
+        <b>Barcode: </b>
+        <p>{{ book.barcode }}</p>
+    {% endif %}
+    {% if book.loc_code %}
+        <b>Location Code: </b>
+        <p>{{ book.loc_code }}</p>
+    {% endif %}
+    {% if book.BM_cat %}
+        <b>British Museum Catalogue (1882): </b>
+        <p>{{ book.BM_cat }}</p>
+    {% endif %}-->
