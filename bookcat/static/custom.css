@@ -36,5 +36,9 @@ html * {
 }
 
 .input {
-  width: 100%;
+  width: 100rem;
 }
+
+/* #id_contributors__contains{
+  width: 900px;
+} */
