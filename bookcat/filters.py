@@ -26,5 +26,7 @@ class BookFilter(django_filters.FilterSet):
         model = Book
         fields = {'title_description': ['contains'],
                   'contributors': ['contains'],
-                  'language': ['contains']
+                  'language': ['contains'],
+                  'barcode': ['contains'],
+                  'call_num': ['contains']
                 }
