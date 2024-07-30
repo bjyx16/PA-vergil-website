@@ -51,32 +51,3 @@ for i in range (len(xls)):
 for book in books:
     my_product = book
     my_product.save()
-
-    
-import pandas as pd
-from bookcat.models import Book
-xls = pd.read_excel('Vergil.xlsx', header=0)
- for i in range (len(xls)):
-     loc = xls.loc[i, 'Location:']
-     loc_code = xls.loc[i, 'Location Code:']
-     call_num = xls.loc[i, 'Call Number:']
-     category = xls.loc[i,'Category (Print):']
-     title = xls.loc[i, 'Title/Description (Print – Original):']
-     cont = ''
-     if (xls.loc[i, "Author (Modern):"].find('virgil')>=0):
-             cont = "Publius Vergilius Maro"
-             if (xls.loc[i, "Contributors:"] != ' '):
-                     cont += ", "
-     if (xls.loc[i, "Contributors:"] != ' '):
-             cont += xls.loc[i, "Contributors:"]
-     if (xls.loc[i, "Publisher:"] != ' '):
-             if (cont!=''):
-                     cont += ", "
-             cont += xls.loc[i, "Publisher:"]
-     barcodes = xls.loc[i, 'Barcodes:']
-     date = xls.loc[i, 'Date (Print):']
-     publisher = xls.loc[i,'Publisher:']
-     lang = xls.loc[i,'Language:']
-     bmcat = xls.loc[i,'B. M. Cat. (1882):']
-     note = xls.loc[i,'Notes:']
-     books.append(Book(title_description = title, contributors = cont, date = date, publisher = publisher, category = category, language = lang, call_num = call_num, barcode = barcodes, loc_code = loc_code, BM_cat = bmcat))
