@@ -1,6 +1,6 @@
 # PA-vergil-website
 https://andover-catalog-vergiliana.azurewebsites.net/
-<br> Please be patient, the site may take a while to load.
+<br> Please be patient, the site may take a while to load. Try reloading site if returns error.
 
 ## Basic Commands
 **Setting up venv:**
